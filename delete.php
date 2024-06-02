@@ -8,10 +8,10 @@ if(isset($_GET['delete'])){
     $delete_query=mysqli_query($conn,"Delete from `products` where id=$delete_id") or die("Query failed");
 
     if($delete_query){
-        header('location:view_products.php');
+        header('location:admin_view.php');
     }else{
         echo "出错了";
-        header('location:view_products.php');       
+        header('location:admin_view.php');       
     }
 }
 
