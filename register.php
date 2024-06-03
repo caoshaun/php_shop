@@ -1,5 +1,6 @@
 <?php
 include 'connect.php';
+session_start();
 
 //接收数据
 $name=$_POST["name"];
@@ -13,10 +14,10 @@ if ($res) {
     $ress=mysqli_fetch_assoc($res);
     if ($ress==NULL) {
         $res=mysqli_query($conn, "insert into user (name, password,email,address,date) values ('$name', '$password','$email','$address','$date')");
-        $display_message = '注册成功';
+        $_SESSION['ms'] = '注册成功';
         header('location:index.php');        
     }else {
-        $display_message = '该名字已注册';
+        $_SESSION['ms'] = '该名字已注册';
         header('location:index.php');
     }
 }
