@@ -17,6 +17,7 @@ if ($res) {
         header('location:index.php');        
     }else {
         $display_message = '该名字已注册';
+        header('location:index.php');
     }
 }
 
