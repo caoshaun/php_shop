@@ -331,6 +331,7 @@
     margin: 0 auto;
     margin-top: 2rem;
   }
+
   .add_product .input_fields,
   .update_product .input_fields {
   
@@ -358,12 +359,15 @@
     margin-top: 2rem;
     margin: 0 auto;
   }
+  .submit_btn:disabled {
+    background: grey;
+    cursor: not-allowed;
+    color: white;
+  }
+
   .cancel_btn {
     background-color: var(--red);
     margin: 2rem auto;
-  }
-  .submit_btn:hover {
-    color: var(--color3);
   }
   
 

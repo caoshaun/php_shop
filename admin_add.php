@@ -61,14 +61,18 @@ if(isset($_POST['add_product'])){
         <section>
             <h3 class="heading">添加商品</h3>
             <form action="" class="add_product" method="post" enctype="multipart/form-data">
-                <input type="text" name="product_name" placeholder="输入商品名" class="input_fields" required>
-                <input type="number" name="product_price" min="0" placeholder="输入价格" class="input_fields" required>
-                <input type="file" name="product_image" class="input_fields" required accept="image/png,image/jpg,image/jpeg">
-                <input type="submit" name="add_product" class="submit_btn" value="添加">
+                <input type="text" name="product_name" placeholder="输入商品名" class="input_fields" id="goodsName" oninput="checkGoodsName();checkAll()" required>
+                <span id='addGoodsms'>&nbsp</span>
+                <input type="number" name="product_price" min="0" placeholder="输入价格" class="input_fields" id="num" oninput="checknum();checkAll()" required>
+                <span id="numms">&nbsp</span>
+                <input type="file" name="product_image" class="input_fields" id="fileInput"  oninput="checkFile();checkAll()" required accept="image/png,image/jpg,image/jpeg">
+                <span id='addFilems'>&nbsp</span>
+                <input type="submit" name="add_product" class="submit_btn" id="addBtn" value="添加"  disabled>
             </form>
         </section>
     </div>
 
+    <script src="js/adminAdd.js"></script>
     
 </body>
 </html>
