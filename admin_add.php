@@ -40,6 +40,15 @@ if(isset($_POST['add_product'])){
         <!-- message display -->
         <?php
         //echo 'uid:'.$_SESSION['uid'].'name:'.$_SESSION['name'].'admin_uid:'.$_SESSION['admin_uid'];
+        if(isset($_SESSION['ms'])){
+            $ms= $_SESSION['ms'];
+            echo "
+            <div class='display_message'>
+                <span>$ms</span>
+                <i class='fas fa-times' onclick='this.parentElement.style.display=`none`';></i>
+            </div>";
+            unset($_SESSION['ms']);
+        }
         if(isset($display_message)){
             echo "
             <div class='display_message'>

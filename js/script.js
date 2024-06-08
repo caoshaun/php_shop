@@ -44,7 +44,9 @@ function checkLoginName(){
     var uname=document.getElementById('login-text').value;
     var span=document.getElementById('loginNameid');
     if(uname=='' || uname==null){
-        span.innerHTML='请输入用户名';
+        return false;
+    }else if(uname.length>20){
+        span.innerHTML ='用户名长度超过20';
         span.style.color='red';
         return false;
     }else{
@@ -58,7 +60,9 @@ function checkLoginPwd(){
     var span=document.getElementById('loginPwdid');
 
     if(loginPwd=="" || loginPwd==null){
-        span.innerHTML='请输入密码';
+        return false;
+    }else if(loginPwd.length>20){
+        span.innerHTML ='密码过长';
         span.style.color='red';
         return false;
     }else{
@@ -68,11 +72,13 @@ function checkLoginPwd(){
 }
 function checkLoginSub(){
     var loginBtnStat=document.getElementById('loginBtn');
+    const loginmsstat=document.getElementById('loginWrappermsid');
     if(checkLoginName()&&checkLoginPwd()){
         loginBtnStat.disabled=false;
     }else{
         loginBtnStat.disabled=true;
     }
+    loginmsstat.innerHTML='';
 }
 
 function showPassword0(){
@@ -95,7 +101,9 @@ function checkRegName(){
     var span=document.getElementById('regNameid');
     var reg=/^[a-zA-Z0-9\u4e00-\u9fa5\u3040-\u30ff\s]+$/; //    /^[u4e00-u9fa5·0-9A-z]+$/
     if(uname=='' || uname==null){
-        span.innerHTML='请输入用户名';
+        return false;
+    }else if(uname.length>20){
+        span.innerHTML ='用户名长度超过20';
         span.style.color='red';
         return false;
     }else if (reg.test(uname)){
@@ -103,7 +111,7 @@ function checkRegName(){
         span.style.color='green';
         return true;
     }else{
-        span.innerHTML ='用户名为大小写字母，数字，空格，中文，日语';
+        span.innerHTML ='用户名为半角大小写字母，数字，空格，中文，日语';
         span.style.color='red';
         return false;
     }
@@ -128,8 +136,6 @@ function checkRegPwd(){
     const passedChecks = checks.filter(check => check.valid);
 
     if (RegPwd=="" || RegPwd ==null){
-        span.innerHTML='请输入密码';
-        span.style.color='red';
         return false;
     }else if(fullWidthRegex.test(RegPwd)){
         span.innerHTML='请输入半角字母数字';
@@ -188,8 +194,6 @@ function isPwdCom(){
     var text2=document.getElementById("register-password2").value;
     var span=document.getElementById("pwd2span");
     if (text2=="" || text2==null){
-        span.innerHTML='请再次输入密码';
-        span.style.color='red';
         return false;
     }else if (text1==text2){
         span.innerHTML = "✓";
@@ -208,7 +212,9 @@ function checkEmail(){
     const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if(emailText=="" || emailText==null){
-        span.innerHTML="请输入邮箱"
+        return false;
+    }else if(emailText.length>40){
+        span.innerHTML ='邮箱长度超过40';
         span.style.color='red';
         return false;
     }else if(reg.test(emailText)){   
@@ -226,7 +232,9 @@ function checkAddress(){
     var address=document.getElementById("register-address").value;
     var span=document.getElementById("addressid");
     if(address=="" || address==null){
-        span.innerHTML="请输入地址";
+        return false;
+    }else if(address.length>20){
+        span.innerHTML ='地址长度超过255';
         span.style.color='red';
         return false;
     }else{      
@@ -238,10 +246,12 @@ function checkAddress(){
 
 function checkRegSubmit(){
     const regbtn=document.getElementById('regBtn');
+    const regms=document.getElementById('regWrappermsid');
     var checkbox=document.getElementById("agree").checked;
     if(checkRegName()&&checkRegPwd()&&isPwdCom()&&checkEmail()&&checkAddress()&&checkbox){
         regbtn.disabled=false;
     }else{
         regbtn.disabled=true;
     }
+    regms.innerHTML='';
 }

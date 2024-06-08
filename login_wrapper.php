@@ -30,9 +30,9 @@ else{
             <!-- 密码 -->
             <div class="input-box">
                 <span class="icon"><ion-icon name="eye-off-outline" id='pwIcon0' onclick="showPassword0()"></ion-icon></span>
-                <input type="password" id="login-password" name="password" onblur="checkLoginPwd()" oninput="checkLoginSub()" required>
+                <input type="password" id="login-password" name="password" onblur="checkLoginPwd();" oninput="checkLoginSub()" required>
                 <label>Password</label>
-                <span id="loginPwdid"></span>
+                <span class='loginMs' id="loginPwdid"></span>
             </div>
             <!-- <div class="remember-forget">
                 <label><input type="checkbox">Remember me</label>
