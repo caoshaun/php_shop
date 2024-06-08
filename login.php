@@ -29,8 +29,8 @@ $admin_ress=mysqli_fetch_assoc($admin_res);
         exit();
     }else{
         //登录失败
-        $_SESSION['ms']="名字或密码输入错误";
-        header('Location: index.php');
+        $_SESSION['loginWrapperms']="名字或密码输入错误";
+        header('Location: index.php#');
         exit();
     }
 ?>

@@ -115,11 +115,11 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: -200px;
-    margin-left: -220px;
+    margin-left: -200px;
+    margin-top: -220px;
     z-index: 10;
     width: 400px;
-    height: 560px;
+    height: 440px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -132,6 +132,12 @@
     transform: scale(0);
     transition: transform .2s ease, height .2s ease;
 }
+
+.wrapper.active {
+  height: 660px;
+  margin-top: -330px;
+}
+
 .wrapper.active-popup {
     transform: scale(1);
 }
@@ -254,6 +260,19 @@
     color: #fff;
     font-weight: 500;
 }
+
+.btn:disabled {
+  background: grey;
+  cursor: not-allowed;
+}
+
+.loginMs{
+  font-size: 1.3em;
+  color: red;
+  font-weight: 500;
+  display: flex;
+}
+
 .login-register {
     font-size: 1.5rem;
     color: #162938;
