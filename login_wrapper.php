@@ -32,7 +32,7 @@ else{
                 <span class="icon"><ion-icon name="eye-off-outline" id='pwIcon0' onclick="showPassword0()"></ion-icon></span>
                 <input type="password" id="login-password" name="password" onblur="checkLoginPwd();" oninput="checkLoginSub()" required>
                 <label>Password</label>
-                <span class='loginMs' id="loginPwdid"></span>
+                <span id="loginPwdid"></span>
             </div>
             <!-- <div class="remember-forget">
                 <label><input type="checkbox">Remember me</label>
