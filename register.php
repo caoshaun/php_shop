@@ -14,18 +14,18 @@ if ($res) {
     $ress=mysqli_fetch_assoc($res);
     if ($ress==NULL) {
         $res=mysqli_query($conn, "insert into user (name, password,email,address,date) values ('$name', '$password','$email','$address','$date')");
-        $_SESSION['ms'] = '注册成功';
+        $_SESSION['ms'] = '登録完了';
         header('location:index.php#');        
     }else if($name==$ress['name']){        
-        $_SESSION['regWrapperms'] = '该名字已注册';
+        $_SESSION['regWrapperms'] = 'ユーザー名重複';
         header('location:index.php#');      
     }else if($email==$ress['email'])
     {
-        $_SESSION['regWrapperms'] = '该邮箱已注册';
+        $_SESSION['regWrapperms'] = 'メール重複';
         header('location:index.php#');
     }
     else{
-        $_SESSION['regWrapperms'] = '该账号已注册';
+        $_SESSION['regWrapperms'] = 'アカウント重複';
         header('location:index.php#');
     }
 }

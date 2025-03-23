@@ -3,10 +3,10 @@
 //检测登录状态
 if(isset($_SESSION['uid'])){
     $name=$_SESSION['name'];
-    $login_stats = "<a href='index.php'>用户：$name</a>"."<form action='' method='post' style='margin: 0px;display: inline;'><button class='btnLogin-popup' type='submit' name='logout'>退出</button></form>";
+    $login_stats = "<a href='index.php'>ユーザー：$name</a>"."<form action='' method='post' style='margin: 0px;display: inline;'><button class='btnLogin-popup' type='submit' name='logout'>退出</button></form>";
 }
 else{
-    $login_stats="<button class='btnLogin-popup'>登录</button>";
+    $login_stats="<button class='btnLogin-popup'>登録</button>";
 }
 
 //登出
@@ -24,7 +24,7 @@ if(isset($_POST['logout'])){
     <div class="header_body">
         <a href="index.php" class="logo">Mall</a>
         <nav class="navigation">
-            <a href="index.php">浏览商品</a>
+            <a href="index.php">商品一覧</a>
             <!-- select query -->
             <?php
             if(isset($_SESSION['uid'])){
@@ -39,13 +39,13 @@ if(isset($_POST['logout'])){
         }
             ?>
             <!-- shopping icon -->
-            <a href="cart.php">购物车<i class="fa-solid fa-cart-shopping"></i><span><sup><?php 
+            <a href="cart.php">カット<i class="fa-solid fa-cart-shopping"></i><span><sup><?php 
             if (isset($all_quantities)){
                 echo $all_quantities;
             }
             ?></sup></span></a>
             <?php echo $login_stats;?>
-            <!-- <button class="btnLogin-popup">登录</button> -->
+            <!-- <button class="btnLogin-popup">登録</button> -->
         </nav>
         <!-- <div id="menu-btn" class="fas fa-bars"></div> -->
 

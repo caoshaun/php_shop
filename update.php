@@ -16,7 +16,7 @@ if(isset($_POST['update_product'])){
         move_uploaded_file($update_product_image_tmp_name,$update_product_image_folder);
         header('location:view_products.php');
     }else{
-        $display_message="出错了";
+        $display_message="エラー";
     }
 }
 ?>
@@ -66,8 +66,8 @@ if(isset($_POST['update_product'])){
                     <input type="file" class="input_fields fields" required accept="image/png,image/jpg,image/jpeg" name="update_product_image">
 
                     <div class="btns">
-                        <input type="submit" class="edit_btn" value="上传" name="update_product">
-                        <input type="reset" id="close-edit" class="cancel_btn" value="取消">
+                        <input type="submit" class="edit_btn" value="アップロード" name="update_product">
+                        <input type="reset" id="close-edit" class="cancel_btn" value="キャンセル">
                     </div>
                 </form>
 

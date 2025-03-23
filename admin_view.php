@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>浏览商品</title>
+    <title>商品一覧</title>
 
     <!-- css file -->
     <link rel="stylesheet" href="css/style.css">    
@@ -31,10 +31,10 @@ session_start();
                     if(mysqli_num_rows($display_product)>0){
                         echo "<table>
                         <thead>
-                            <th>序号</th>
-                            <th>商品图</th>
-                            <th>商品名</th>
-                            <th>价格</th>
+                            <th>番号</th>
+                            <th>イメージ</th>
+                            <th>商品名前</th>
+                            <th>値段</th>
                             <th>操作</th>
                         </thead>
                         <tbody>";
@@ -59,7 +59,7 @@ session_start();
                     $num++;
                         }
                     }else{
-                        echo "<div class='empty_text'>已售罄</div>";
+                        echo "<div class='empty_text'>完売</div>";
                     }
                     ?>
                 </tbody>

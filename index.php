@@ -19,10 +19,10 @@ if(isset($_POST['add_to_cart'])){
         //insert cart data in cart
         $insert_product=mysqli_query($conn,"insert into cart (uid,name,price,image,quantity) values ('$uid','$product_name','$product_price','$product_image','$product_quantity')");
     }
-    $display_message = "已加入购物车";
+    $display_message = "カートに追加されました";
 
     }else{
-        $display_message="请登录";
+        $display_message="ログインしてください";
     }
 
 }
@@ -82,19 +82,19 @@ if(isset($_POST['add_to_cart'])){
                     <div class="edit_form">
                         <img src="image/<?php echo $fetch_protuct['image']?>" alt="">
                         <h3><?php echo $fetch_protuct['name']?></h3>
-                        <div class="price">单价：¥<?php echo number_format($fetch_protuct['price']) ?></div>
+                        <div class="price">単価：¥<?php echo number_format($fetch_protuct['price']) ?></div>
                         <input type="hidden" name="product_name" value="<?php echo $fetch_protuct['name']?>"> 
                         <input type="hidden" name="product_price" value="<?php echo $fetch_protuct['price']?>">
                         <input type="hidden" name="product_image" value="<?php echo $fetch_protuct['image']?>">
                         <!-- <input type="number" value=1> -->
-                        <input type="submit" class="submit_btn cart_btn" value="加入购物车" name="add_to_cart">
+                        <input type="submit" class="submit_btn cart_btn" value="カートに追加" name="add_to_cart">
                     </div>
                 </form>
                 <?php
                     }
                     
                 }else{
-                    $display_message = "已售罄";
+                    $display_message = "完売";
                 }
                 ?>
             </div>

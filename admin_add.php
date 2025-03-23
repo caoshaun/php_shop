@@ -11,8 +11,8 @@ if(isset($_POST['add_product'])){
     $insert_query=mysqli_query($conn, "insert into products (name, price, image) values ('$product_name','$product_price','$product_image')") or die("Insert query failed");
     if($insert_query){
         move_uploaded_file($product_image_temp_name,$product_image_folder); 
-        $display_message = "添加成功";
-    }else{$display_message = "添加失败";}
+        $display_message = "追加成功";
+    }else{$display_message = "追加失敗";}
     
 }
 
@@ -59,15 +59,15 @@ if(isset($_POST['add_product'])){
         ?>
 
         <section>
-            <h3 class="heading">添加商品</h3>
+            <h3 class="heading">商品追加</h3>
             <form action="" class="add_product" method="post" enctype="multipart/form-data">
-                <input type="text" name="product_name" placeholder="输入商品名" class="input_fields" id="goodsName" oninput="checkGoodsName();checkAll()" required>
+                <input type="text" name="product_name" placeholder="商品名前入力" class="input_fields" id="goodsName" oninput="checkGoodsName();checkAll()" required>
                 <span id='addGoodsms'>&nbsp</span>
-                <input type="number" name="product_price" min="0" placeholder="输入价格" class="input_fields" id="num" oninput="checknum();checkAll()" required>
+                <input type="number" name="product_price" min="0" placeholder="値段入力" class="input_fields" id="num" oninput="checknum();checkAll()" required>
                 <span id="numms">&nbsp</span>
                 <input type="file" name="product_image" class="input_fields" id="fileInput"  oninput="checkFile();checkAll()" required accept="image/png,image/jpg,image/jpeg">
                 <span id='addFilems'>&nbsp</span>
-                <input type="submit" name="add_product" class="submit_btn" id="addBtn" value="添加"  disabled>
+                <input type="submit" name="add_product" class="submit_btn" id="addBtn" value="追加"  disabled>
             </form>
         </section>
     </div>

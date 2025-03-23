@@ -15,19 +15,19 @@ if($ress){
     //普通用户
     $_SESSION['uid']=$ress['id'];
     $_SESSION['name']=$ress['name'];
-    $_SESSION['ms']="登录成功";
+    $_SESSION['ms']="ログインしました";
     header('Location: index.php');
     exit();        
 }else if($admin_ress){
     //管理员
     $_SESSION['admin_uid']=$admin_ress['id'];
     unset($_SESSION['uid']);
-    $_SESSION['ms']="管理员登录成功";
+    $_SESSION['ms']="管理員ログインしました";
     header('Location: admin_add.php');
     exit();
 }else{
     //登录失败
-    $_SESSION['loginWrapperms']="账号或密码输入错误";
+    $_SESSION['loginWrapperms']="アカウントまたはパスワードが間違っています";
     header('Location: index.php#');
     exit();
 }

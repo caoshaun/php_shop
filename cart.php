@@ -53,7 +53,7 @@ if(isset($_GET['delete_all'])){
     if(!isset($_SESSION['uid'])){
         echo "
         <div class='display_message'>
-            <span>请登录</span>
+            <span>登録</span>
             <i class='fas fa-times' onclick='this.parentElement.style.display=`none`';></i>
         </div>";
     }else{
@@ -68,12 +68,12 @@ if(isset($_GET['delete_all'])){
                 if(mysqli_num_rows($select_cart_product)>0){
                     echo "
                     <thead>
-                        <th>序号</th>
-                        <th>商品名</th>
-                        <th>图片</th>
-                        <th>价格</th>
+                        <th>番号</th>
+                        <th>商品名前</th>
+                        <th>イメージ</th>
+                        <th>値段</th>
                         <th>数量</th>
-                        <th>总价</th>
+                        <th>合計金額</th>
                         <th>操作</th>
                     </thead>
                     <tbody>";
@@ -102,14 +102,14 @@ if(isset($_GET['delete_all'])){
                             </td>
                             <td><?php echo number_format($each_all_price) ?></td>
                             <td>
-                                <a href="cart.php?remove=<?php echo $fetch_cart_product['id']?>" class="delete_product_btn" onclick="return confirm('确认删除商品？')"><i class="fas fa-trash"></i></a>
+                                <a href="cart.php?remove=<?php echo $fetch_cart_product['id']?>" class="delete_product_btn" onclick="return confirm('商品の削除を確認する？')"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                 <?php
                     }
 
                 }else{
-                    echo "<div class='empty_text'>暂无商品选中</div>";
+                    echo "<div class='empty_text'>商品が選択されていません</div>";
                 }
                 ?>
                 </tbody>
@@ -121,12 +121,12 @@ if(isset($_GET['delete_all'])){
                 echo "
                 <!-- bottom area -->
                 <div class='table_bottom'>
-                    <a href='index.php' class='bottom_btn'>继续购物</a>
-                    <h3 class='bottom_btn'>总价：￥<span>$all_manay_format</span></h3>
-                    <a href='checkout.php' class='bottom_btn '>购买</a>
+                    <a href='index.php' class='bottom_btn'></a>
+                    <h3 class='bottom_btn'>总价：￥<span>$all_manay_format</span>買い物を続ける</h3>
+                    <a href='checkout.php' class='bottom_btn '>購入</a>
                 </div>
-                <a href='cart.php?delete_all' class='delete_all_btn' onclick='return confirm(`确认删除商品？`)'>
-                    <i class='fas fa-trash'>删除全部</i>
+                <a href='cart.php?delete_all' class='delete_all_btn' onclick='return confirm(`商品の削除を確認する？`)'>
+                    <i class='fas fa-trash'>全て削除</i>
                 </a>";
             }
             ?>

@@ -10,7 +10,7 @@ if(isset($_GET['delete'])){
     if($delete_query){
         header('location:admin_view.php');
     }else{
-        echo "出错了";
+        echo "エラー";
         header('location:admin_view.php');       
     }
 }

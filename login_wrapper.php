@@ -16,18 +16,18 @@ else{
 <div class="wrapper <?php echo $wrapperCtrl; ?>" id="wrapper">
     <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
 
-    <!-- 登录 -->
+    <!-- ログイン -->
     <div class="form-box login">
         <h2>Login</h2>
         <form action="login.php" method="post">
-            <!-- 用户名 -->
+            <!-- ユーザー名 -->
             <div class="input-box">
                 <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                 <input type="text" id="login-text" name="name" onblur="checkLoginName()" oninput="checkLoginSub()" required>
                 <label>Name</label>
                 <span id="loginNameid"></span>
             </div>
-            <!-- 密码 -->
+            <!-- パスワード -->
             <div class="input-box">
                 <span class="icon"><ion-icon name="eye-off-outline" id='pwIcon0' onclick="showPassword0()"></ion-icon></span>
                 <input type="password" id="login-password" name="password" onblur="checkLoginPwd();" oninput="checkLoginSub()" required>
@@ -52,46 +52,46 @@ else{
         </form>
     </div>
 
-    <!-- 注册 -->
+    <!--　アカウントを作成 -->
     <div class="form-box register">
         <h2>Registration</h2>
         <form action="register.php" method="post">
-            <!-- 用户名 -->
+            <!-- ユーザー名 -->
             <div class="input-box">
                 <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
                 <input type="name" id="register-text" name="name" onblur="checkRegName()" oninput="checkRegSubmit()" required>
                 <label>Name</label>
                 <span id="regNameid"></span>
             </div>
-            <!-- 密码 -->
+            <!-- パスワード -->
             <div class="input-box">
                 <span class="icon"><ion-icon name="eye-off-outline" id='pwIcon1' onclick="showPassword()"></ion-icon></span>
                 <input type="password" id="register-password1" name="password" onblur="checkRegPwd()" oninput="checkRegSubmit()" required>
                 <label>Password</label>
                 <span id="regPwdid"></span>
             </div>        
-            <!-- 密码确认 -->
+            <!-- パスワードの確認 -->
             <div class="input-box">
                 <span class="icon"><ion-icon name="eye-off-outline" id='pwIcon2' onclick="showPassword1()"></ion-icon></span>
                 <input type="password" id="register-password2" name="password" onblur="isPwdCom()" oninput="checkRegSubmit()" required>
                 <label>Password Confirm</label>
                 <span id="pwd2span"></span>
             </div>         
-            <!-- 邮箱 -->
+            <!-- メール -->
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
                 <input type="email" id="register-email" name="email" onblur="checkEmail()" oninput="checkRegSubmit()" required>
                 <label>Email</label>
                 <span id="emailid"></span>
             </div>
-            <!-- 地址 -->
+            <!-- 住所 -->
             <div class="input-box">
                 <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                 <input type="text" id="register-address" name="address" onblur="checkAddress()" oninput="checkRegSubmit()" required>
                 <label>Address</label>
                 <span id="addressid"></span>
             </div>
-            <!-- 检查框 -->
+            <!-- チェックボックス -->
             <div class="remember-forget">
                 <label><input type="checkbox" id="agree" onclick="checkRegSubmit()" >I agree to the <a href="#">terms & conditions</a></label>
             </div>
